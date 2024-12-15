@@ -33,16 +33,7 @@ class CustomAppWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Child App From Git with app_id:'),
-              FutureBuilder<String?>(
-                future: SharedPrefHelper.getData("app_id"),
-                builder: (context, snapshot) {
-                  if (snapshot.connectionState == ConnectionState.done) {
-                    return Text(snapshot.data ?? '');
-                  } else {
-                    return const CircularProgressIndicator();
-                  }
-                },
-              ),
+              Text(SharedPreferencesUtils().getString("app_id") ?? "No app_id"),
               ElevatedButton(
                 onPressed: () {
                   Get.to(() => const Screen1());
