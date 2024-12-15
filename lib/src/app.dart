@@ -2,6 +2,7 @@ import 'dart:developer';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:test_app/src/page1.dart';
 
 class CustomAppWidget extends StatelessWidget {
   const CustomAppWidget({super.key});
@@ -18,7 +19,9 @@ class CustomAppWidget extends StatelessWidget {
             Text('Custom App Widget'),
             ElevatedButton(
               onPressed: () {
-                log("asa");
+                MaterialPageRoute(
+                  builder: (context) => Screen1(),
+                );
               },
               child: Text("Click Me"),
             )
