@@ -5,6 +5,7 @@ import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:test_app/src/page1.dart';
+import 'package:test_app/helper/shared_pref_helper.dart';
 
 class CustomAppWidget extends StatelessWidget {
   const CustomAppWidget({super.key});
@@ -32,8 +33,8 @@ class CustomAppWidget extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Text('Child App From Git with app_id:'),
-              FutureBuilder<String>(
-                future: prefs.then((value) => value.getString("app_id")!),
+              FutureBuilder<String?>(
+                future: SharedPrefHelper.getData("app_id"),
                 builder: (context, snapshot) {
                   log(snapshot.data.toString());
                   return Text(snapshot.data.toString());
