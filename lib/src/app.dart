@@ -36,8 +36,11 @@ class CustomAppWidget extends StatelessWidget {
               FutureBuilder<String?>(
                 future: SharedPrefHelper.getData("app_id"),
                 builder: (context, snapshot) {
-                  log(snapshot.data.toString());
-                  return Text(snapshot.data.toString());
+                  if (snapshot.connectionState == ConnectionState.done) {
+                    return Text(snapshot.data ?? '');
+                  } else {
+                    return const CircularProgressIndicator();
+                  }
                 },
               ),
               ElevatedButton(
