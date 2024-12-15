@@ -11,20 +11,33 @@ class CustomAppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        title: const Text("Child App From Git"),
+        centerTitle: true,
+        backgroundColor: Colors.deepPurple,
+        leading: IconButton(
+          icon: const Icon(Icons.arrow_back),
+          onPressed: () {
+            Get.back();
+          },
+        ),
+      ),
       body: Padding(
-        padding: EdgeInsets.all(8.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Text('Custom App Widget'),
-            ElevatedButton(
-              onPressed: () {
-                Get.to(() => Screen1());
-              },
-              child: Text("Click Me"),
-            )
-          ],
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text('Child App From Git'),
+              ElevatedButton(
+                onPressed: () {
+                  Get.to(() => const Screen1());
+                },
+                child: const Text("Go to Screen 1"),
+              )
+            ],
+          ),
         ),
       ),
     );
