@@ -12,6 +12,8 @@ class CustomAppWidget extends StatelessWidget {
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Column(
+          crossAxisAlignment: CrossAxisAlignment.center,
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Text('Custom App Widget'),
             ElevatedButton(
