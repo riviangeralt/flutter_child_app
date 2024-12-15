@@ -19,8 +19,11 @@ class CustomAppWidget extends StatelessWidget {
             Text('Custom App Widget'),
             ElevatedButton(
               onPressed: () {
-                MaterialPageRoute(
-                  builder: (context) => Screen1(),
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Screen1(),
+                  ),
                 );
               },
               child: Text("Click Me"),
