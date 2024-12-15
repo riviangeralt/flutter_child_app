@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -6,7 +8,7 @@ class CustomAppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
         padding: EdgeInsets.all(8.0),
         child: Column(
@@ -14,7 +16,7 @@ class CustomAppWidget extends StatelessWidget {
             Text('Custom App Widget'),
             ElevatedButton(
               onPressed: () {
-                print("asa");
+                log("asa");
               },
               child: Text("Click Me"),
             )
