@@ -7,8 +7,19 @@ class CustomAppWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(
-        child: Text('Custom App Widget'),
+      body: Padding(
+        padding: EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Text('Custom App Widget'),
+            ElevatedButton(
+              onPressed: () {
+                print("asa");
+              },
+              child: Text("Click Me"),
+            )
+          ],
+        ),
       ),
     );
   }
